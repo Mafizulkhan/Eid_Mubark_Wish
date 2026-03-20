@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Surprise 🎁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+
+            /* Animated gradient */
+            background: linear-gradient(270deg, #000428, #004e92, #000428);
+            background-size: 600% 600%;
+            animation: gradientMove 10s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glow center effect */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,215,0,0.2), transparent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .box {
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            color: gold;
+            text-shadow: 0 0 15px gold;
+        }
+
+        .gift-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(45deg, gold, orange);
+            cursor: pointer;
+            box-shadow: 0 0 20px gold;
+            transition: 0.3s;
+        }
+
+        .gift-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px gold;
+        }
+
+        .qr {
+            display: none;
+            margin-top: 20px;
+            animation: zoomIn 0.8s ease forwards;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        img {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px white;
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: gold;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="box">
+    <h1>🔐 Your Surprise is Locked</h1>
+    <p>Click below to unlock your special Eid gift 🎁</p>
+
+    <button class="gift-btn" onclick="unlock()">Open Gift 🎁</button>
+
+    <div class="qr" id="qrBox">
+        <h2>🎉 Surprise Revealed 🎉</h2>
+        <img src="Payment.jpeg">
+        <p>Scan this QR for something special 💖</p>
+    </div>
+</div>
+
+<script>
+function unlock() {
+    document.getElementById("qrBox").style.display = "block";
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+/* Particles */
+for (let i = 0; i < 35; i++) {
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>

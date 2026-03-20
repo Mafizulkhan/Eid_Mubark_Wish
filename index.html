@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eid Mubarak 🌙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stars span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: blink 2s infinite alternate;
+        }
+
+        @keyframes blink {
+            from { opacity: 0.2; }
+            to { opacity: 1; }
+        }
+
+        .moon {
+            position: absolute;
+            top: 80px;
+            right: 80px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #fff, #ddd);
+            border-radius: 50%;
+            box-shadow: 0 0 60px white;
+        }
+
+        .card {
+            text-align: center;
+            padding: 45px;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 40px rgba(255,255,255,0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .salam {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        h1 {
+            font-size: 55px;
+            background: linear-gradient(90deg, gold, white, gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: -200px; }
+            100% { background-position: 200px; }
+        }
+
+        .msg {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .from {
+            margin-top: 20px;
+            font-size: 16px;
+            color: gold;
+            font-style: italic;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(45deg, gold, orange);
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 20px gold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px gold;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: gold;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 0; }
+            to { transform: translateY(-10vh); opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+
+<div class="card">
+    <div class="salam">🕌 Assalamu Alaikum</div>
+    <h1>🌙 Eid Mubarak 🎉</h1>
+    <div class="msg">
+        May Allah fill your life with happiness, peace,<br>
+        and endless blessings 💖
+    </div>
+    <div class="from">— From your friend, <b>Mafizul Khan</b></div>
+
+    <button onclick="goNext()">Open Your Surprise 🎁</button>
+</div>
+
+<script>
+for (let i = 0; i < 80; i++) {
+    let star = document.createElement("span");
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    document.getElementById("stars").appendChild(star);
+}
+
+for (let i = 0; i < 40; i++) {
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(p);
+}
+
+function goNext() {
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>

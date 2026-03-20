@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Friendship ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: gold;
+        }
+
+        .photo {
+            margin-top: 30px;
+            width: 85%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px gold;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            border: none;
+            background: gold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<div class="container">
+    <h1>💖 Our Beautiful Memories 💖</h1>
+
+    <img src="aura 999.png" class="photo">
+
+    <div class="text">
+        No matter where life takes us,<br>
+        our friendship will always stay strong ❤️
+    </div>
+
+    <button onclick="nextPage()">Unlock Your Surprise 🔐</button>
+</div>
+
+<script>
+function nextPage() {
+    window.location.href = "page3.html";
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
